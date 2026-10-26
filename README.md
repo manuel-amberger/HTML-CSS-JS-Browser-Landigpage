@@ -50,7 +50,7 @@ A clean, personal browser landingpage featuring live weather, date and timer wid
 
 ## GitHub Page
 
-Link: https://manuel-amberger.github.io/browser-landingpage/
+Link: https://manuel-amberger.github.io/HTML-CSS-JS-Browser-Landigpage/
 
 ## Credits & Attributions
 
