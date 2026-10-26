@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Neuer Tab</title>
+        <link rel="stylesheet" href="style.css">
+
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+        <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+        <link rel="manifest" href="img/favicon/site.webmanifest">
+        <link rel="shortcut icon" href="img/favicon/favicon.ico">
+    </head>
+    <body>
+        <!-- Hero Section -->
+        <section id="hero">
+            <!-- Left Widgets -->
+            <div id="leftWidgets" class="widgetsContainer">
+                <!-- Date Widget -->
+                <div id="dateContainer" class="widgetContainer">
+                    <i data-lucide="calendar-days"></i>
+                    <h3 id="date">&nbsp;</h3>
+                </div>
+
+                <!-- Timer/Stopwatch Widget -->
+                <div id="timerStopwatchContainer" class="widgetContainer">
+                    <div id="timerStopwatchSelection">
+                        <button id="timerBtn" class="selected">&nbsp;</button>
+                        <button id="stopwatchBtn">&nbsp;</button>
+                    </div>
+
+                    <div id="mainContainer">
+                        <div class="timerContainer">
+                            <h1 id="timer">10:00</h1>
+                        </div>
+
+                        <div class="stopwatchContainer hiden">
+                            <h1 id="stopwatch">00:00:00</h1>
+                        </div>
+                    </div>
+
+                    <div id="inputWrapper">
+                        <div id="timerInputContainer" class="timerContainer inputContainer">
+                                <button id="timerStartStopBtn"><i data-lucide="timer"></i></button>
+                                <button id="timerResetBtn"><i data-lucide="timer-reset"></i></button>
+                        </div>
+
+                        <div id="stopwatchInputContainer" class="stopwatchContainer inputContainer hiden">
+                                <button id="stopwatchStartStopBtn"><i data-lucide="hourglass"></i></button>
+                                <button id="stopwatchResetBtn"><i data-lucide="x"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Network Latency Widget -->
+                <div id="networkLatencyContainer" class="widgetContainer">
+                    <i data-lucide="arrow-up-down"></i>
+                    <h3 id="networkLatency">&nbsp;</h3>
+                </div>
+            </div>
+
+            <!-- Hero Main Content -->
+            <div id="mainContent">
+                <!-- Greeting and Quote -->
+                <div id="greetingContainer">
+                    <h1 id="greeting">&nbsp;</h1>
+                    <h2 id="quote">&nbsp;</h2>
+                </div>
+
+                <!-- Clock Widget -->
+                <div id="clockContainer">
+                    <p id="clock">&nbsp;</p>
+                </div>
+
+                <!-- Search Bar -->
+                <div id="searchbarContainer">
+                    <form id="searchForm">
+                        <input type="text" name="q" id="searchbar" title="" placeholder="Suche mit Google" autocomplete="off" required>
+                    </form>
+
+                    <button id="searchBarBtn" title=""><img src="img/icons/iconGemini.png" alt="Gemini Icon"></button>
+                </div>
+            </div>
+
+            <!-- Time Boxes -->
+            <div id="timeBoxesContainer">
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+                <div class="box">&nbsp;</div>
+            </div>
+
+            <!-- Right Widgets -->
+            <div id="rightWidgets">
+                <!-- Weather Widget -->
+                <div id="weatherContainer" class="widgetContainer hiden">
+                    <button id="weatherLocation">&nbsp;</button>
+                    <p id="weatherMinMax">&nbsp;</p>
+                    <i id="weatherIcon"></i>
+                    <h3 id="currentTemp">&nbsp;</h3>
+                    <p id="realFeelTemp">&nbsp;</p>
+                    <p id="windSpeed">&nbsp;</p>
+                    <p id="rainProbability">&nbsp;</p>
+
+                    <div id="forecastH1" class="forecast">
+                        <p id="forecastHour1" class="forecastHour">&nbsp;</p>
+                        <p id="forecastTemp1" class="forecastTemp">&nbsp;</p>
+                        <p id="forecastRainProbability1" class="forecastRainProbability">&nbsp;</p>
+                    </div>
+
+                    <div id="forecastH2" class="forecast">
+                        <p id="forecastHour2" class="forecastHour">&nbsp;</p>
+                        <p id="forecastTemp2" class="forecastTemp">&nbsp;</p>
+                        <p id="forecastRainProbability2" class="forecastRainProbability">&nbsp;</p>
+                    </div>
+
+                    <div id="forecastH3" class="forecast">
+                        <p id="forecastHour3" class="forecastHour">&nbsp;</p>
+                        <p id="forecastTemp3" class="forecastTemp">&nbsp;</p>
+                        <p id="forecastRainProbability3" class="forecastRainProbability">&nbsp;</p>
+                    </div>
+                </div>
+
+                <div id="dayTimeContainer" class="widgetContainer hiden">
+                    <i id="sunriseIcon" class="dayTimeIcon" data-lucide="sunrise"></i>
+                    <p id="sunriseTime" class="dayTime">&nbsp;</p>
+
+                    <i id="sunsetIcon" class="dayTimeIcon" data-lucide="sunset"></i>
+                    <p id="sunsetTime" class="dayTime">&nbsp;</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main id="content">
+            <h1>Nothing to see here yet ...</h1>
+        </main>
+
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="script.js"></script>
+        <script>
+            lucide.createIcons();
+        </script>
+    </body>
+</html>

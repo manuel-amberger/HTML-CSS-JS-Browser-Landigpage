@@ -1,0 +1,499 @@
+html, body {
+    margin : 0;
+    height : 100%;
+    overflow-y : scroll;
+    scroll-behavior : smooth;
+    scrollbar-width : none;
+    -ms-overflow-style : none;
+    font-family : Arial, sans-serif;
+    scroll-snap-type : y mandatory;
+    background-color : black;
+    color : white;
+}
+
+html::-webkit-scrollbar {
+    display : none;
+}
+
+.hiden {
+    display : none !important;
+}
+
+#hero {
+    position : relative;
+    height : 100vh;
+    background-image : url("img/wallpaper/wp4.jpg");
+    background-size : cover;
+    background-position : center;
+    background-repeat : no-repeat;
+}
+
+#hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+#hero > * {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+#mainContent {
+    position: relative;
+    top : 50%;
+    transform : translateY(-50%);
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+    justify-content : center;
+}
+
+#greetingContainer {
+    user-select : none;
+    text-align : center;
+}
+
+#greetingContainer #greeting {
+    font-size : 4rem;
+    margin : 0px;
+}
+
+#greetingContainer #quote {
+    max-width : 680px;
+    font-style : italic;
+    margin-top : 15px;
+}
+
+#clockContainer {
+    user-select : none;
+    text-align : center;
+}
+
+#clockContainer #clock {
+    font-size : 8rem;
+    margin : 35px 0px 100px 0px;
+}
+
+#searchbarContainer {
+    user-select : none;
+    display : flex;
+    flex-direction : row;
+    gap : 20px;
+    margin-bottom : 75px;
+}
+
+#searchbarContainer #searchbar {
+    width : 500px;
+    height : 45px;
+    font-size : 1.2rem;
+    padding : 10px 20px;
+    border : none;
+    outline : none;
+    border-radius : 40px;
+    background: rgba(255,255,255,0.15);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    caret-color : white;
+    color : white;
+    border : solid 1px transparent;
+    transition : border-color 1s ease-in-out;
+}
+
+#searchbarContainer #searchbar:hover, #searchbarContainer #searchBarBtn:hover {
+    border : solid 1px white;
+}
+
+#searchbarContainer #searchbar:focus {
+    border : solid 1px white;
+}
+
+#searchbarContainer #searchbar::placeholder {
+    color : rgba(255,255,255,0.7);
+}
+
+#searchbarContainer #searchbar:focus::placeholder {
+    color : transparent;
+}
+
+#searchbarContainer #searchBarBtn {
+    border-radius : 40px;
+    background: rgba(255,255,255,0.15);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    border : none;
+    outline : none;
+    height : 65px;
+    width : 65px;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    border : solid 1px transparent;
+    transition : border-color 0.5s ease-in-out;
+}
+
+#searchBarBtn img {
+    width : 37px;
+    height : 37px;
+}
+
+#leftWidgets, #rightWidgets {
+    position : absolute;
+    display : flex;
+    flex-direction : column;
+    gap : 10px;
+    z-index : 100;
+}
+
+#leftWidgets {
+    top : 2.5vh;
+    left : 1.25vw;
+}
+
+#rightWidgets {
+    top : 2.5vh;
+    right : 1.25vw;
+}
+
+.widgetContainer {
+    user-select : none;
+    color : white;
+    background: rgba(255,255,255,0.15);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    border-radius : 25px;
+}
+
+#dateContainer {
+    padding : 15px 20px;
+    display : flex;
+    flex-direction : row;
+    align-items : center;
+    justify-content : center;
+}
+
+#dateContainer #date {
+    margin : 1.5px 0px 0px 20px;
+}
+
+#timerStopwatchContainer {
+    height : 65px;
+    padding : 15px 20px;
+    display : flex;
+    justify-content : space-between;
+    align-items : center;
+    gap : 20px;
+    border : 3px solid transparent;
+}
+
+.isBlinking {
+    animation : blink 1s ease-in-out 5;
+}
+
+@keyframes blink {
+    0%, 100% { border-color : transparent; }
+    50% { border-color : white; }
+}
+
+#timerStopwatchSelection, #inputWrapper {
+    width : 25px;
+}
+
+#timerStopwatchSelection {
+    display : flex;
+    flex-direction : column;
+    gap : 10px;
+}
+
+#timerStopwatchSelection button {
+    width : 23px;
+    height : 23px;
+    border-radius : 50%;
+    border : 3px solid white;
+    outline : none;
+    background : none;
+    cursor : pointer;
+}
+
+#timerStopwatchSelection button.selected {
+    background-color : white;
+}
+
+.timerContainer, .stopwatchContainer {
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+    gap : 10px;
+}
+
+#timer {
+    font-size : 40px;
+    margin : 0;
+}
+
+#stopwatch {
+    font-size : 40px;
+    margin : 0;
+}
+
+.inputContainer {
+    display : flex;
+    flex-direction : column;
+    gap : 10px;
+}
+
+.inputContainer button {
+    border : none;
+    outline : none;
+    background : none;
+    color : white;
+    transform : scale(1.3);
+    cursor : pointer;
+}
+
+.inputContainer button:active {
+    transform : scale(1.2);
+}
+
+#networkLatencyContainer {
+    display : flex;
+    flex-direction : row;
+    justify-content : center;
+    align-items : center;
+    gap : 10px;
+    width : fit-content;
+    padding : 0px 20px;
+}
+
+#weatherContainer {
+    display : grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-areas :
+        "weatherLocation weatherLocation weatherMinMax"
+        "weatherIcon currentTemp windSpeed"
+        "weatherIcon realFeelTemp rainProbability"
+        "forecastH1 forecastH2 forecastH3";
+    padding : 10px 20px;
+}
+
+#weatherContainer img {
+    width : 50px;
+}
+
+#weatherLocation {
+    grid-area : weatherLocation;
+    min-width : 160px;
+    text-align : left;
+    border : none;
+    outline : none;
+    background : none;
+    font-family: inherit;
+    font-size: inherit;
+    color : white;
+    margin-right : 35px;
+}
+
+#weatherMinMax {
+    grid-area : weatherMinMax;
+    font-weight : bold;
+}
+
+#weatherIcon {
+    grid-area : weatherIcon;
+    align-self : center;
+    margin-left : 25px;
+    transform: scale(1.7);
+}
+
+#currentTemp {
+    grid-area : currentTemp;
+    margin : 0;
+}
+
+#realFeelTemp {
+    grid-area : realFeelTemp;
+    margin : 0;
+    margin-top : 2.5px;
+}
+
+#windSpeed {
+    grid-area : windSpeed;
+    margin : 0;
+}
+
+#rainProbability {
+    grid-area : rainProbability;
+    margin : 0;
+    margin-top : 2.5px;
+}
+
+.forecast {
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+}
+
+#forecastH1 {
+    grid-area : forecastH1;
+}
+
+#forecastH2 {
+    grid-area : forecastH2;
+}
+
+#forecastH3 {
+    grid-area : forecastH3;
+}
+
+.forecast * {
+    margin : 0;
+}
+
+.forecast .forecastHour {
+    font-size : 1.2rem;
+    font-weight : bold;
+    margin : 14px 0px 4px 0px;
+}
+
+.forecast .forecastRainProbability {
+    margin-top : 4px;
+}
+
+#dayTimeContainer {
+    display : grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-areas :
+        "sunriseIcon sunsetIcon"
+        "sunriseTime sunsetTime";
+    padding : 12.5px 0px;
+}
+
+.dayTime {
+    font-size : 1.15rem;
+    margin : 0;
+    margin-top : 10px;
+}
+
+.dayTimeIcon {
+    transform : scale(1.3);
+}
+
+#sunriseIcon {
+    grid-area : sunriseIcon;
+    justify-self : center;
+    align-self : center;
+}
+
+#sunriseTime {
+    grid-area : sunriseTime;
+    justify-self : center;
+    align-self : center;
+}
+
+#sunsetIcon {
+    grid-area : sunsetIcon;
+    justify-self : center;
+    align-self : center;
+}
+
+#sunsetTime {
+    grid-area : sunsetTime;
+    justify-self : center;
+    align-self : center;
+}
+
+#timeBoxesContainer {
+    user-select : none;
+    position : absolute;
+    top : 95.5vh;
+    left : 50%;
+    transform: translate(-50%);
+    display : flex;
+    gap : 25px;
+}
+
+#timeBoxesContainer .box {
+    background-color: rgba(255,255,255,0.1);
+    border : solid 2px black;
+    border-radius : 5px;
+    width : 25px;
+    height : 15px;
+    padding : 5px;
+}
+
+#timeBoxesContainer .box:hover {
+    border : solid 2px white;
+}
+
+#timeBoxesContainer .box.passed {
+    background-color: rgba(255,255,255,0.3);
+}
+
+#timeBoxesContainer .box.current {
+    background-color: rgba(255,255,255,0.6);
+}
+
+#content {
+    min-height : 100vh;
+    background-color : black;
+}
+
+#hero, #content {
+    scroll-snap-align : start;
+}
+
+/* Laptop Full-Screen */
+@media (max-width : 1440px) {
+    #timeBoxesContainer {
+        gap : 10px;
+    }
+}
+
+/* Laptop Half-Screen */
+@media (max-width : 718px) {
+    #greetingContainer, #dayTimeContainer, #timeBoxesContainer, #leftWidgets, #rightWidgets {
+        display : none !important;
+    }
+
+    #timeBoxesContainer .box {
+        width : 10px !important;
+        height : 7px !important;
+    }
+}
+
+/* Laptop Quarter-Screen */
+@media (max-height : 304px) {
+    #greetingContainer, #dayTimeContainer, #timeBoxesContainer, #leftWidgets, #rightWidgets {
+        display : none !important;
+    }
+
+    #clockContainer #clock {
+        margin : 55px 0px 25px 0px;
+    }
+}
+
+/* Desktop Half-Screen */
+@media (max-width : 1058px) {
+    #weatherContainer, #dateContainer {
+        display : none !important;
+    }
+
+    #timeBoxesContainer {
+        gap : 4px;
+    }
+
+    #timeBoxesContainer .box {
+        width : 20px;
+        height : 15px;
+    }
+}
+
+/* Desktop Quarter-Screen */
+@media (max-height : 700px) {
+    #greetingContainer, #timeBoxesContainer {
+        display : none !important;
+    }
+}
